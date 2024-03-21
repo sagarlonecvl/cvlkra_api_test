@@ -39,7 +39,7 @@ def soap_get_password_order(client):
     password = root.find('.//APP_GET_PASS').text
     print("I am PAssword ====>", password)
     if (password):
-        pass_dict = {'password': password, 'passkey': '04051998'}
+        pass_dict = {'password': password, 'passkey': '******'}
         return pass_dict
     else:
         raise Exception(
@@ -55,11 +55,11 @@ def soap_get_pan(client, pass_dict):
     header_value = soap_set_wsa_headers(method_url, svc_url)
 
     response = client.service.GetPanStatus(
-        panNo='AAAPA0001Y',
-        # AAACN6682J
-        # AJSPB1234T
-        userName='WEBADMIN',
-        posCode='5100147231',
+        panNo='AAAAAAAAAA',
+        # AAAAAAAAAA
+        # AAAAAAAAAA
+        userName='USER',
+        posCode='000000000000',
         password=pass_dict.get('password'),
         passKey=pass_dict.get('passkey'),
         _soapheaders=[header_value])
